@@ -12,6 +12,8 @@ public class Entity : MonoBehaviour
     {
         currentSpeed = speedDefault / amount;
 
+        Debug.Log("velocidad actual del enemigo: " + currentSpeed + "/" + speedDefault);
+
         Invoke(nameof(ResetSpeed), duration);
     }
 
