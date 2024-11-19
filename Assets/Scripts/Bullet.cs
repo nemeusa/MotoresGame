@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    [SerializeField] float speed;
-    [SerializeField] float slowDuration;
-    [SerializeField] float slowAmount;
+    [SerializeField] private float _speed;
+    [SerializeField] private float _slowDuration;
+    public float SlowDuration { get { return _slowDuration; } }
+    [SerializeField] private float _slowAmount;
+    public float SlowAmount { get { return _slowAmount; } }
 
     void Update()
     {
-        transform.Translate(Vector3.forward * speed * Time.deltaTime);   
+        transform.Translate(Vector3.forward * _speed * Time.deltaTime);   
     }
 
     private void OnTriggerEnter(Collider other)
@@ -19,9 +21,20 @@ public class Bullet : MonoBehaviour
 
         if (enemy != null)
         {
-            enemy.Slow(slowAmount, slowDuration);
+            Debug.Log("bullet detected collision");
         }
-            Destroy(gameObject);
-        Debug.Log("choque xd");
     }
+
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    Enemy enemy = other.GetComponent<Enemy>();
+
+    //    if (enemy != null)
+    //    {
+    //        enemy.Slow(_slowAmount, _slowDuration);
+    //        Debug.Log("enemy collision");
+    //    }
+    //    Destroy(gameObject);
+    //    Debug.Log("choque xd");
+    //}
 }

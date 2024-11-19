@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] float speedDefaul;
+    [SerializeField] private float speedDefaul;
     [SerializeField] public float currentSpeed;
 
     private void Start()
@@ -16,9 +16,20 @@ public class Enemy : MonoBehaviour
         transform.Translate(Vector3.forward * currentSpeed * Time.deltaTime);
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        Bullet bullet = other.GetComponent<Bullet>();
+
+        if (bullet != null)
+        {
+            Slow(bullet.SlowAmount, bullet.SlowDuration);
+            Debug.Log("Enemy received collision");
+        }
+    }
+
     public void Slow (float amount, float duration) 
     {
-        currentSpeed = speedDefaul * amount;
+        currentSpeed = speedDefaul / amount;
 
         Invoke(nameof(ResetSpeed), duration);
     }
