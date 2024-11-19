@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Bullet2 : MonoBehaviour
 {
-    [SerializeField] float speed;
+    [SerializeField] private float speed;
     [SerializeField] GameObject EnemyObject;
     void Update()
     {
@@ -13,16 +13,16 @@ public class Bullet2 : MonoBehaviour
     }
 
 
-    private void OnTriggerEnter(Collider other)
-    {
-        //Enemy enemy = other.GetComponent<Enemy>();
-        Enemy2 enemy2 = other.GetComponent<Enemy2>();
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    //Enemy enemy = other.GetComponent<Enemy>();
+    //    Enemy2 enemy2 = other.GetComponent<Enemy2>();
 
-        if (enemy2 != null)
-        {
-            enemy2.IsDead();
-        }
-        Destroy(gameObject);     
-        Debug.Log("choque xd");
-    }
+    //    if (enemy2 != null)
+    //    {
+    //        enemy2.IsDead();
+    //    }
+    //    Destroy(gameObject);     
+    //    Debug.Log("choque xd");
+    //}
 }
