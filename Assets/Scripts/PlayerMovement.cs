@@ -5,13 +5,12 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
 
-    [Header ("move")]
+    [Header ("Move")]
     [SerializeField] float speedMov;
     Rigidbody rb;
 
     [Header ("Jump")]
     [SerializeField] float forceJump;
-    //[SerializeField] float extraForceJump;
     [Range(0,1)][SerializeField] float jumpTime;
     private float jumpTimeCounter;
     private bool isJump;
@@ -53,12 +52,6 @@ public class PlayerMovement : MonoBehaviour
         float dir = Input.GetAxisRaw("Horizontal");
 
         rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y, dir * speedMov);
-
-        //var Dir = new Vector3(0, 0, Input.GetAxisRaw("Horizontal") * speedMov);
-
-        //Dir = Dir * speedMov * Time.deltaTime * speedMov;
-        //rb.MovePosition(transform.position + Dir * speedMov * Time.fixedDeltaTime);
-
         if(dir > 0) transform.rotation = Quaternion.Euler(0, 0, 0);
         else if(dir < 0) transform.rotation = Quaternion.Euler(0, 180, 0);
 
@@ -76,7 +69,6 @@ public class PlayerMovement : MonoBehaviour
             isJumping = true;
             jumpTimeCounter = jumpTime;
             rb.AddForce(Vector3.up * forceJump, ForceMode.Impulse);
-            //rb.AddForce(Vector3.up * forceJump * Time.fixedDeltaTime);
             isJump = false;
 
         }

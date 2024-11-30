@@ -24,17 +24,4 @@ public class Bullet : MonoBehaviour
             Debug.Log("bullet detected collision");
         }
     }
-
-    //private void OnTriggerEnter(Collider other)
-    //{
-    //    Enemy enemy = other.GetComponent<Enemy>();
-
-    //    if (enemy != null)
-    //    {
-    //        enemy.Slow(_slowAmount, _slowDuration);
-    //        Debug.Log("enemy collision");
-    //    }
-    //    Destroy(gameObject);
-    //    Debug.Log("choque xd");
-    //}
 }
