@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using static Enum;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -63,6 +64,7 @@ public class Player : MonoBehaviour
     {
         currentHealthStatus = HealthStatus.Dead;
         Debug.Log("muelto");
+        SceneManager.LoadScene(0);
     }
 
     public void ActivateImmunity(float duration)
