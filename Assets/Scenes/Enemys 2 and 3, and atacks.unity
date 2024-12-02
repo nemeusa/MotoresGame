@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641275, b: 0.5748172, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -11269,6 +11269,7 @@ GameObject:
   - component: {fileID: 699878806}
   - component: {fileID: 699878807}
   - component: {fileID: 699878808}
+  - component: {fileID: 699878809}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -11316,14 +11317,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speedMov: 7
-  forceJump: 8
-  jumpTime: 0.3
-  gravityMultiplier: 2.7
-  gravityMultiplierUp: 1.2
-  raycastMaxDistance: 1.0001
-  raycastMask:
-    serializedVersion: 2
-    m_Bits: 8
 --- !u!4 &699878805
 Transform:
   m_ObjectHideFlags: 0
@@ -11397,6 +11390,26 @@ MonoBehaviour:
   meshRenderers: []
   normalColors: []
   flashColor: {r: 1, g: 1, b: 1, a: 1}
+--- !u!114 &699878809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 699878802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e094d97ed8c21374ea03a94fe0137dbe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  forceJump: 11
+  jumpTime: 0.527
+  gravityMultiplier: 2.5
+  gravityMultiplierUp: 3.72
+  raycastMaxDistance: 1.0001
+  raycastMask:
+    serializedVersion: 2
+    m_Bits: 8
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
