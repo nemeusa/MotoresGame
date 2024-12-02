@@ -42,7 +42,7 @@ public class Enemy : MonoBehaviour
     {
         estaVivo = false;
         Debug.Log("El enemigo ha muerto.");
-        Destroy(gameObject);  
+        Destroy(gameObject);
     }
 
     private void OnTriggerEnter(Collider other)
