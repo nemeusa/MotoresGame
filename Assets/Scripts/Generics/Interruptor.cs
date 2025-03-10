@@ -12,7 +12,7 @@ public class Interruptor : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E))
         {
             LightState = !LightState;
-            LightController.Activar(LightState);
+            LightController.Activate(LightState);
         }
     }
 }

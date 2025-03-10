@@ -23,5 +23,15 @@ public class Bullet : MonoBehaviour
         {
             Debug.Log("bullet detected collision");
         }
+
+        //Interface
+
+        IDamageable damageableObject = other.gameObject.GetComponent<IDamageable>();
+
+        if (damageableObject != null)
+        {
+            damageableObject.TakeDamage(10);
+            //Debug.Log("recibe daño");
+        }
     }
 }

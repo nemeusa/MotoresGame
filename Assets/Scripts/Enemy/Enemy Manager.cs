@@ -9,7 +9,7 @@ public class EnemyManager : MonoBehaviour
     void Start()
     {
         //enemigos
-        enemies.Add(EnemyType.Bee, new EnemyStats(10, 5));    
+        enemies.Add(EnemyType.Bee, new EnemyStats(10, 5));
         enemies.Add(EnemyType.Mole, new EnemyStats(30, 10));   
         enemies.Add(EnemyType.Spikes, new EnemyStats(1, 10));  
 

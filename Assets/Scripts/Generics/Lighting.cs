@@ -4,23 +4,23 @@ using UnityEngine;
 
 public class Lighting<T> : MonoBehaviour where T : Behaviour
 {
-    private T componente;
+    private T _component;
 
     void Awake()
     {
-        componente = GetComponent<T>();
+        _component = GetComponent<T>();
 
-        if (componente == null)
+        if (_component == null)
         {
             Debug.LogError($"El componente {typeof(T).Name} no existe en {gameObject.name}");
         }
     }
 
-    public void Activar(bool estado)
+    public void Activate(bool estado)
     {
-        if (componente != null)
+        if (_component != null)
         {
-            componente.enabled = estado;
+            _component.enabled = estado;
         }
     }
 }
